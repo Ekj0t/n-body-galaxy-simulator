@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22825c6f-a2c8-46bf-a9fd-7f138b0c2ef3" name="Changes" comment="Two Galaxy collision implemented">
+    <list default="true" id="22825c6f-a2c8-46bf-a9fd-7f138b0c2ef3" name="Changes" comment="Two Galaxy collisions implemented">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimulationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimulationPanel.java" afterDir="false" />
     </list>
@@ -158,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773585715870</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Two Galaxy collisions implemented">
+      <option name="closed" value="true" />
+      <created>1773586013381</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773586013381</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,6 +182,7 @@
     <MESSAGE value="Initial star position fixed." />
     <MESSAGE value="Motion blur implemented" />
     <MESSAGE value="Two Galaxy collision implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Two Galaxy collision implemented" />
+    <MESSAGE value="Two Galaxy collisions implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two Galaxy collisions implemented" />
   </component>
 </project>

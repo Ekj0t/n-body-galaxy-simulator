@@ -29,6 +29,7 @@ public class Body {
     }
 
     public void draw(Graphics2D g, double offsetX, double offsetY){
+
         if(mass < 1000){
 
             int drawX = (int)(x + offsetX);
@@ -39,9 +40,10 @@ public class Body {
             int b = (int)(color.getBlue() * brightness);
 
             g.setColor(new Color(r, gC, b));
-            int size = brightness > 0.8 ? 3 : 2;
-            g.fillOval(drawX, drawY, size, size);
 
+            int size = brightness > 0.8 ? 3 : 2;
+
+            g.fillOval(drawX, drawY, size, size);
         }
     }
 }

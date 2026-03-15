@@ -48,6 +48,15 @@ public class SimulationPanel extends JPanel implements Runnable {
 
             Body star = new Body(x, y);
 
+            double r = rand.nextDouble();
+
+            if(r < 0.7) star.color = new Color(255,255,255);     // white
+            else if(r < 0.85) star.color = new Color(255,245,220); // warm white
+            else if(r < 0.95) star.color = new Color(220,235,255); // cool white
+            else star.color = new Color(255,210,210);              // faint red
+
+            star.brightness = 0.4f + rand.nextFloat() * 0.6f;
+
             double dx = x - centerX;
             double dy = y - centerY;
 
