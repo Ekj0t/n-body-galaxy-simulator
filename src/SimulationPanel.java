@@ -1,6 +1,5 @@
 import javax.swing.JPanel;
-import java.awt.Graphics;
-import java.awt.Color;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -34,10 +33,18 @@ public class SimulationPanel extends JPanel implements Runnable {
         //NUMBER OF STARS
         int starCount = 1500;
 
+        int arms = 2;
+        double armSpread = 0.5;
+
         for(int i = 0; i < starCount; i++){
 
-            double angle = rand.nextDouble() * Math.PI * 2;
             double radius = rand.nextDouble() * 350;
+
+            double armAngle = (i % arms) * (2 * Math.PI / arms);
+
+            double angle = armAngle + radius * 0.02;
+
+            angle += rand.nextGaussian() * armSpread;
 
             double x = centerX + Math.cos(angle) * radius;
             double y = centerY + Math.sin(angle) * radius;
@@ -117,6 +124,9 @@ public class SimulationPanel extends JPanel implements Runnable {
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
+
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         for(Body b : bodies){
             b.draw(g);
