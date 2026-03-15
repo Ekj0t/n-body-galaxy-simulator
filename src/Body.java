@@ -1,5 +1,4 @@
-import java.awt.Graphics;
-import java.awt.Color;
+import java.awt.*;
 
 public class Body {
 
@@ -27,7 +26,7 @@ public class Body {
         y += vy;
     }
 
-    public void draw(Graphics g){
+    public void draw(Graphics2D g){
         if(mass < 1000){
 
             g.setColor(color);

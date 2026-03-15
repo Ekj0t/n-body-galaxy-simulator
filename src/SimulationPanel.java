@@ -123,13 +123,17 @@ public class SimulationPanel extends JPanel implements Runnable {
     }
 
     protected void paintComponent(Graphics g){
-        super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
+
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+        // Fade previous frame (motion blur effect) -> less alpha : long trails
+        g2.setColor(new Color(0,0,0,45));
+        g2.fillRect(0,0,getWidth(),getHeight());
+
         for(Body b : bodies){
-            b.draw(g);
+            b.draw(g2);
         }
     }
 }

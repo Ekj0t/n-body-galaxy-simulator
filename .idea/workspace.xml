@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22825c6f-a2c8-46bf-a9fd-7f138b0c2ef3" name="Changes" comment="Star colors added" />
+    <list default="true" id="22825c6f-a2c8-46bf-a9fd-7f138b0c2ef3" name="Changes" comment="Initial star position fixed.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimulationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimulationPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773582175001</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Initial star position fixed.">
+      <option name="closed" value="true" />
+      <created>1773582586528</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773582586528</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,6 +154,7 @@
     <MESSAGE value="Galactic core introduced" />
     <MESSAGE value="Gravity and velocity improved" />
     <MESSAGE value="Star colors added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Star colors added" />
+    <MESSAGE value="Initial star position fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial star position fixed." />
   </component>
 </project>
