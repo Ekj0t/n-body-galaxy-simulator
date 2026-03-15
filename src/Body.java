@@ -12,6 +12,8 @@ public class Body {
 
     Color color = Color.WHITE;
 
+    float brightness = 1.0f;
+
     public Body(double x, double y){
         this.x = x;
         this.y = y;
@@ -29,8 +31,13 @@ public class Body {
     public void draw(Graphics2D g){
         if(mass < 1000){
 
-            g.setColor(color);
-            g.fillOval((int)x, (int)y, 2, 2);
+            int r = (int)(color.getRed() * brightness);
+            int gC = (int)(color.getGreen() * brightness);
+            int b = (int)(color.getBlue() * brightness);
+
+            g.setColor(new Color(r, gC, b));
+            int size = brightness > 0.8 ? 3 : 2;
+            g.fillOval((int)x, (int)y, size, size);
 
         }
     }

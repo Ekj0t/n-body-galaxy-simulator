@@ -50,6 +50,7 @@ public class SimulationPanel extends JPanel implements Runnable {
             double y = centerY + Math.sin(angle) * radius;
 
             Body star = new Body(x, y);
+            star.brightness = 0.4f + rand.nextFloat() * 0.6f;
 
             double r = rand.nextDouble();
 
