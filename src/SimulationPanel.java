@@ -49,7 +49,7 @@ public class SimulationPanel extends JPanel implements Runnable {
 
             double dist = Math.sqrt(dx*dx + dy*dy);
 
-            double speed = Math.sqrt(0.05 * 1000 / dist);
+            double speed = Math.sqrt(0.05 * 800 / (dist + 20));
 
             star.vx = -dy / dist * speed;
             star.vy = dx / dist * speed;
@@ -93,7 +93,7 @@ public class SimulationPanel extends JPanel implements Runnable {
 
                 if(dist < 2) continue;
 
-                double force = G * b.mass / (dist * dist);
+                double force = G * b.mass / (dist * dist) * 0.05;
 
                 ax += force * dx / dist;
                 ay += force * dy / dist;

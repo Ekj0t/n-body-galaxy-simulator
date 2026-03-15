@@ -17,6 +17,10 @@ public class Body {
     }
 
     public void update(){
+
+        vx *= 0.999;
+        vy *= 0.999;
+
         x += vx;
         y += vy;
     }
