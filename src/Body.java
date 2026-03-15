@@ -11,6 +11,8 @@ public class Body {
 
     double mass = 1;
 
+    Color color = Color.WHITE;
+
     public Body(double x, double y){
         this.x = x;
         this.y = y;
@@ -26,9 +28,11 @@ public class Body {
     }
 
     public void draw(Graphics g){
-        g.setColor(Color.WHITE);
         if(mass < 1000){
+
+            g.setColor(color);
             g.fillOval((int)x, (int)y, 2, 2);
+
         }
     }
 }
