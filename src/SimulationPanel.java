@@ -38,6 +38,16 @@ public class SimulationPanel extends JPanel implements Runnable {
 
             Body star = new Body(x, y);
 
+            double dx = x - centerX;
+            double dy = y - centerY;
+
+            double dist = Math.sqrt(dx*dx + dy*dy);
+
+            double speed = Math.sqrt(0.05 * 1000 / dist);
+
+            star.vx = -dy / dist * speed;
+            star.vy = dx / dist * speed;
+
             bodies.add(star);
         }
     }
