@@ -106,7 +106,9 @@ public class SimulationPanel extends JPanel implements Runnable {
 
                 if(dist < 2) continue;
 
-                double force = G * b.mass / (dist * dist) * 0.05;
+                double softening = 10;
+
+                double force = G * b.mass / ((dist * dist) + (softening * softening)) * 0.03;
 
                 ax += force * dx / dist;
                 ay += force * dy / dist;
