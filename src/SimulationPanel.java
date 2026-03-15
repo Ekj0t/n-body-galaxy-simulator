@@ -8,6 +8,7 @@ public class SimulationPanel extends JPanel implements Runnable {
 
     Thread thread;
     ArrayList<Body> bodies = new ArrayList<>();
+    double G = 0.05;
 
     public SimulationPanel() {
         setBackground(Color.BLACK);
@@ -55,6 +56,37 @@ public class SimulationPanel extends JPanel implements Runnable {
     }
 
     public void updateSimulation(){
+
+        for(int i = 0; i < bodies.size(); i++){
+
+            Body a = bodies.get(i);
+
+            double ax = 0;
+            double ay = 0;
+
+            for(int j = 0; j < bodies.size(); j++){
+
+                if(i == j) continue;
+
+                Body b = bodies.get(j);
+
+                double dx = b.x - a.x;
+                double dy = b.y - a.y;
+
+                double dist = Math.sqrt(dx*dx + dy*dy);
+
+                if(dist < 2) continue;
+
+                double force = G * b.mass / (dist * dist);
+
+                ax += force * dx / dist;
+                ay += force * dy / dist;
+            }
+
+            a.vx += ax;
+            a.vy += ay;
+        }
+
         for(Body b : bodies){
             b.update();
         }
