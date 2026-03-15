@@ -3,8 +3,6 @@
 A real-time **gravitational N-body simulation** written in Java that generates and animates spiral galaxies.  
 Stars interact through Newtonian gravity, forming rotating galaxies, tidal arms, and chaotic structures during galaxy collisions.
 
-This project is part of a **Java graphics exploration series** focused on physics simulations and procedural generation.
-
 ---
 
 ## Demo
