@@ -12,33 +12,30 @@ public class SimulationPanel extends JPanel implements Runnable {
     public SimulationPanel() {
         setBackground(Color.BLACK);
 
-        createGalaxy();
+        createGalaxy(250, 450, 0.3);
+        createGalaxy(650, 450, -0.3);
 
         thread = new Thread(this);
         thread.start();
     }
 
-    public void createGalaxy() {
+    public void createGalaxy(int centerX, int centerY, double vxOffset) {
 
         Random rand = new Random();
 
-        int centerX = 450;
-        int centerY = 450;
-
-        Body core = new Body(450, 450);
+        Body core = new Body(centerX, centerY);
         core.mass = 10000;
 
         bodies.add(core);
 
-        //NUMBER OF STARS
-        int starCount = 1500;
+        int starCount = 750; // half per galaxy
 
         int arms = 2;
-        double armSpread = 0.5;
+        double armSpread = 0.4;
 
         for(int i = 0; i < starCount; i++){
 
-            double radius = rand.nextDouble() * 350;
+            double radius = rand.nextDouble() * 300;
 
             double armAngle = (i % arms) * (2 * Math.PI / arms);
 
@@ -50,14 +47,6 @@ public class SimulationPanel extends JPanel implements Runnable {
             double y = centerY + Math.sin(angle) * radius;
 
             Body star = new Body(x, y);
-            star.brightness = 0.4f + rand.nextFloat() * 0.6f;
-
-            double r = rand.nextDouble();
-
-            if(r < 0.6) star.color = Color.WHITE;
-            else if(r < 0.8) star.color = Color.YELLOW;
-            else if(r < 0.95) star.color = Color.RED;
-            else star.color = Color.CYAN;
 
             double dx = x - centerX;
             double dy = y - centerY;
@@ -66,7 +55,7 @@ public class SimulationPanel extends JPanel implements Runnable {
 
             double speed = Math.sqrt(0.05 * 800 / (dist + 20));
 
-            star.vx = -dy / dist * speed;
+            star.vx = -dy / dist * speed + vxOffset;
             star.vy = dx / dist * speed;
 
             bodies.add(star);
