@@ -23,6 +23,8 @@ public class Body {
 
     public void draw(Graphics g){
         g.setColor(Color.WHITE);
-        g.fillOval((int)x, (int)y, 2, 2);
+        if(mass < 1000){
+            g.fillOval((int)x, (int)y, 2, 2);
+        }
     }
 }

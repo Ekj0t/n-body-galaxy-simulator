@@ -26,6 +26,12 @@ public class SimulationPanel extends JPanel implements Runnable {
         int centerX = 450;
         int centerY = 450;
 
+        Body core = new Body(450, 450);
+        core.mass = 10000;
+
+        bodies.add(core);
+
+        //NUMBER OF STARS
         int starCount = 1500;
 
         for(int i = 0; i < starCount; i++){
