@@ -112,18 +112,44 @@ public class SimulationPanel extends JPanel implements Runnable {
         }
     }
 
+    public double[] getCenterOfMass(){
+
+        double sumX = 0;
+        double sumY = 0;
+        double totalMass = 0;
+
+        for(Body b : bodies){
+            sumX += b.x * b.mass;
+            sumY += b.y * b.mass;
+            totalMass += b.mass;
+        }
+
+        double cx = sumX / totalMass;
+        double cy = sumY / totalMass;
+
+        return new double[]{cx, cy};
+    }
+
     protected void paintComponent(Graphics g){
 
         Graphics2D g2 = (Graphics2D) g;
 
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+        double[] center = getCenterOfMass();
+
+        double camX = center[0];
+        double camY = center[1];
+
+        double offsetX = getWidth()/2 - camX;
+        double offsetY = getHeight()/2 - camY;
+
         // Fade previous frame (motion blur effect) -> less alpha : long trails
         g2.setColor(new Color(0,0,0,45));
         g2.fillRect(0,0,getWidth(),getHeight());
 
         for(Body b : bodies){
-            b.draw(g2);
+            b.draw(g2, offsetX, offsetY);
         }
     }
 }
