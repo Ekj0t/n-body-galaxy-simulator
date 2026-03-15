@@ -57,6 +57,8 @@ Where:
 
 ---
 
+#File Structure
+
 | File | Description |
 |-----|-------------|
 | `Main` | Starts the application window |
@@ -133,8 +135,3 @@ Possible extensions:
 - **Java**
 - **Java Swing**
 - **Java2D Graphics**
-
-
----
-
-If you want, I can also give you a **much cooler README version (with badges, preview layout, and sections like professional GitHub repos)** so your project **looks more impressive to recruiters and visitors**.
